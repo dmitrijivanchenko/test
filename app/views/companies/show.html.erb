@@ -1,0 +1,22 @@
+<% provide(:title, @company.logo_name) %>
+<div class="row">
+  <aside class="col-lg-4">
+    <section>
+      <h1>
+        <%= image_tag('2.png', alt: 'Rails') %>
+        <%= @company.logo_name %>
+        <div class="users">
+          <% if @company.posts.any? %>
+              <h3>Posts (<%= @company.posts.count %>)</h3>
+              <% @company.posts.each do |post| %>
+                  <li>
+                    <%= post.text %>
+                  </li>
+              <% end %>
+          <% end %>
+        </div>
+      </h1>
+    </section>
+  </aside>
+
+</div>

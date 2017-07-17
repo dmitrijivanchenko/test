@@ -1,0 +1,21 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-lg-4">
+    <section>
+      <h1>
+        <%= image_tag("140.gif", alt: 'Rails') %>
+        <%= @user.name %>
+        <div class="users">
+          <% if @user.posts.any? %>
+              <h3>Posts (<%= @user.posts.count %>)</h3>
+              <% @user.posts.each do |post| %>
+                  <li>
+                    <%= post.text %>
+                  </li>
+              <% end %>
+          <% end %>
+        </div>
+      </h1>
+    </section>
+  </aside>
+</div>
